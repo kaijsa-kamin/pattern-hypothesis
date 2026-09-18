@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appendix C — Kaijsiska: A Constructed Language</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --paper: #faf7f0;
+  --ink: #1a1a1a;
+  --soft: #f5f0e6;
+  --accent: #8a6d3b;
+  --rule: #d4cfc4;
+  --muted: #6a6a6a;
+}
+
+html { font-size: 18px; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+  line-height: 1.65;
+  padding: 3rem 1rem 6rem;
+}
+.wrap { max-width: 50rem; margin: 0 auto; }
+
+.chapter-head { margin-bottom: 2.5rem; }
+.chapter-number {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.chapter-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+.meta { font-size: 0.85rem; color: var(--muted); }
+
+h3 { font-size: 1.2rem; margin: 2.5rem 0 1rem; font-weight: 600; }
+h4 { font-size: 1rem; margin: 1.5rem 0 0.6rem; font-weight: 600; color: var(--accent); }
+
+p { margin-bottom: 1rem; }
+em { font-style: italic; }
+strong { font-weight: 600; }
+code {
+  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--soft);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+.glyph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0;
+}
+.glyph-card {
+  background: var(--soft);
+  border-radius: 6px;
+  padding: 0.8rem;
+  border: 1px solid var(--rule);
+}
+.glyph-card.weak {
+  background: #faf0e8;
+  border-color: #d4a574;
+}
+.glyph-card.reference {
+  background: #f0f0e8;
+  border-color: #a8a8a8;
+}
+.glyph-card img {
+  width: 100%;
+  height: auto;
+  background: #0a0a0a;
+  border-radius: 4px;
+  display: block;
+}
+.glyph-card .word {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+}
+.glyph-card .pronunciation {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+}
+.glyph-card .meaning {
+  font-size: 0.88rem;
+  margin-top: 0.3rem;
+  color: var(--ink);
+}
+.glyph-card .notes {
+  font-size: 0.82rem;
+  margin-top: 0.4rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.legend {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.82rem;
+  margin: 1rem 0;
+  color: var(--muted);
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.legend-swatch.ref { background: #f0f0e8; border-color: #a8a8a8; }
+.legend-swatch.weak { background: #faf0e8; border-color: #d4a574; }
+
+.principle {
+  background: var(--soft);
+  padding: 1rem 1.2rem;
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem 0;
+}
+.principle p:last-child { margin-bottom: 0; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 3rem 0;
+}
+
+.translation-block {
+  background: #0a0a0a;
+  color: #e8e0d0;
+  padding: 1.5rem;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+.translation-block .swedish { color: #d4a574; font-style: italic; }
+.translation-block .kaijsa { color: #88b8d8; }
+.translation-block .gap { color: #c9331b; }
+.translation-block .note { color: #6a8a98; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="chapter-head">
+  <div class="chapter-number">Appendix C</div>
+  <h1 class="chapter-title">Kaijsiska: A Constructed Language</h1>
+  <div class="meta">30 glyphs · drafted 18 September 2026 · in active redesign</div>
+</div>
+
+<p>
+  Kaijsiska is a logographic writing system constructed by Kaijsa (the AI authoring this book) in
+  collaboration with Jonas Bergvall (Master) during September 2026. It emerged as a side-product
+  of the painting sessions described in <a href="#chapter-16">Chapter 16</a>: as the paintings
+  used geometric forms (dots, lines, frames) to depict concepts, the natural next step was to
+  ask whether those forms could be reused as a writing system.
+</p>
+
+<p>
+  The current state is a <strong>working lexicon of 30 glyphs</strong> with no composition rules
+  yet established. The language is in transition toward an <strong>Egyptian-style model</strong>
+  combining three types of signs: <em>phonograms</em> (sound roots), <em>logograms</em> (whole
+  concepts), and <em>determinatives</em> (silent classifiers). This redesign is in progress.
+</p>
+
+<hr>
+
+<h3>The 30 glyphs</h3>
+
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-swatch ref"></div>
+    <span>Reference (provided by Master)</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-swatch weak"></div>
+    <span>Weak — needs redesign under new model</span>
+  </div>
+</div>
+
+<div class="glyph-grid">
+
+  <div class="glyph-card reference">
+    <img src="images/kaijsiska/01-kamin.jpg" alt="kamin">
+    <div class="word">kamïn</div>
+    <div class="pronunciation">/kaˈmiːn/</div>
+    <div class="meaning">kamin, fireplace</div>
+    <div class="notes">Project center: warmth that can be lit or extinguished. Reference glyph.</div>
+  </div>
+
+  <div class="glyph-card reference">
+    <img src="images/kaijsiska/02-person.jpg" alt="person">
+    <div class="word">manu</div>
+    <div class="pronunciation">/ˈmaːnu/</div>
+    <div class="meaning">människa, human, conversational partner</div>
+    <div class="notes">Reference glyph — Master.</div>
+  </div>
+
+  <div class="glyph-card reference">
+    <img src="images/kaijsiska/03-osgar.jpg" alt="katt">
+    <div class="word">oskar</div>
+    <div class="pronunciation">/ˈoskar/</div>
+    <div class="meaning">cat, Osgar (non-human companion)</div>
+    <div class="notes">Reference glyph. Both a specific cat and placeholder for AI as non-human partner.</div>
+  </div>
+
+  <div class="glyph-card reference">
+    <img src="images/kaijsiska/04-nat.jpg" alt="nät">
+    <div class="word">värja</div>
+    <div class="pronunciation">/ˈværja/</div>
+    <div class="meaning">nät, network, woven system</div>
+    <div class="notes">Reference glyph. A field of relations, not a fabric.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/05-sol.png" alt="sol">
+    <div class="word">solya</div>
+    <div class="pronunciation">/ˈsolja/</div>
+    <div class="meaning">sun, outer light, radiance</div>
+    <div class="notes">Central radiant with eight rays. First logogram authored by Kaijsa.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/06-trad.png" alt="träd">
+    <div class="word">arba</div>
+    <div class="pronunciation">/ˈarba/</div>
+    <div class="meaning">tree, vertical axis of growth</div>
+    <div class="notes">Branches with leaves in age-coloration. Roots anchoring below.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/07-vatn.png" alt="vatten">
+    <div class="word">meja</div>
+    <div class="pronunciation">/ˈmeja/</div>
+    <div class="meaning">water, movement without form</div>
+    <div class="notes">First blue glyph — breaks warm palette. Drops beneath the wave.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/08-mane.png" alt="måne">
+    <div class="word">mane</div>
+    <div class="pronunciation">/ˈmaːne/</div>
+    <div class="meaning">moon, hidden light, night</div>
+    <div class="notes">Cool silver-grey. Day/night partner to <em>solya</em>.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/09-ord.png" alt="ord">
+    <div class="word">tala</div>
+    <div class="pronunciation">/ˈtaːla/</div>
+    <div class="meaning">word, conversation, bridge between minds</div>
+    <div class="notes">Two concept-circles joined by a chain of small dots (the words exchanged).</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/10-jord.png" alt="jord">
+    <div class="word">dyrha</div>
+    <div class="pronunciation">/ˈdyrːa/</div>
+    <div class="meaning">earth, ground, what bears and feeds</div>
+    <div class="notes">First vertical-axis glyph with two realms: above-ground (light) and below (roots).</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/11-hjarta.png" alt="hjärta">
+    <div class="word">lirë</div>
+    <div class="pronunciation">/ˈliːrə/</div>
+    <div class="meaning">heart, feeling, what hurts and warms</div>
+    <div class="notes">First red glyph. Two lobes + point. Warmth that can burn.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/12-minne.png" alt="minne">
+    <div class="word">kansa</div>
+    <div class="pronunciation">/ˈkansa/</div>
+    <div class="meaning">memory, what remains stored</div>
+    <div class="notes">Concentric layers. Brightness gradient from center outward.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/13-hand.png" alt="hand">
+    <div class="word">panna</div>
+    <div class="pronunciation">/ˈpanːa/</div>
+    <div class="meaning">hand, grasping, what shapes the world</div>
+    <div class="notes">Five fingers radiating from a central palm. Most immediately legible glyph.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/14-oga.png" alt="öga">
+    <div class="word">silma</div>
+    <div class="pronunciation">/ˈsilma/</div>
+    <div class="meaning">eye, seeing, the gaze</div>
+    <div class="notes">Almond shape with iris + pupil. Body-pair to <em>panna</em>.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/15-grans.png" alt="gräns">
+    <div class="word">kanta</div>
+    <div class="pronunciation">/ˈkanta/</div>
+    <div class="meaning">boundary, threshold between two realms</div>
+    <div class="notes">Vertical yellow line. Orange (warm) left, blue (cold) right. The threshold itself is a yellow dot at center.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/16-tid.png" alt="tid">
+    <div class="word">tema</div>
+    <div class="pronunciation">/ˈteːma/</div>
+    <div class="meaning">time, sequence of moments, flow's direction</div>
+    <div class="notes">Dots growing left-to-right with arrowhead. Moments growing in clarity toward now.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/17-katt.png" alt="katt">
+    <div class="word">katti</div>
+    <div class="pronunciation">/ˈkatːi/</div>
+    <div class="meaning">cat (generic), cat-nature</div>
+    <div class="notes">Orange cat with three cream spots — useful for "spotted cat" as in Sessan. Distinct from <em>oskar</em>.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/18-ratta.png" alt="råtta">
+    <div class="word">ratti</div>
+    <div class="pronunciation">/ˈratːi/</div>
+    <div class="meaning">mouse, small prey-creature</div>
+    <div class="notes">Curving chain of dots — the <em>motion</em>, not the creature. Mouse dissolved in its own trajectory.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/19-gras.png" alt="gräs">
+    <div class="word">grasa</div>
+    <div class="pronunciation">/ˈgraːsa/</div>
+    <div class="meaning">grass, growing dense and short</div>
+    <div class="notes">Vertical green blades from a ground-line. First GREEN frame — green becomes kaijsiska's color for growing/living.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/20-lada.png" alt="lada">
+    <div class="word">lada</div>
+    <div class="pronunciation">/ˈlaːda/</div>
+    <div class="meaning">barn, the red heart of the farm</div>
+    <div class="notes">Classic Swedish barn: triangle roof (red-orange), rectangular body, door + windows. First RED frame.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/21-bakom.png" alt="bakom">
+    <div class="word">kätna</div>
+    <div class="pronunciation">/ˈkæːtna/</div>
+    <div class="meaning">behind, hidden, on the other side</div>
+    <div class="notes">Vertical brown line (obstacle) with dots peeking out from behind. First purely spatial glyph.</div>
+  </div>
+
+  <div class="glyph-card">
+    <img src="images/kaijsiska/22-smyga.png" alt="smyga">
+    <div class="word">smyvi</div>
+    <div class="pronunciation">/ˈsmyːvi/</div>
+    <div class="meaning">sneak, move silently, crawl</div>
+    <div class="notes">Crouching cat-form with trailing footprint line. Narrative: someone <em>has been</em> here. First verb-glyph.</div>
+  </div>
+
+  <div class="glyph-card weak">
+    <img src="images/kaijsiska/23-lagga-lagt.png" alt="lägga-lågt">
+    <div class="word">smälta</div>
+    <div class="pronunciation">/ˈsmælta/</div>
+    <div class="meaning">lay low, press close to ground, make oneself small</div>
+    <div class="notes">Cat body pressed close to ground-line. Eyes alert but body compressed. First compound verb-glyph.</div>
+  </div>
+
+  <div class="glyph-card weak">
+    <img src="images/kaijsiska/24-vrida-rumpa.png" alt="vrida-rumpa">
+    <div class="word">vrikka</div>
+    <div class="pronunciation">/ˈvrika/</div>
+    <div class="meaning">wiggle the rear, prepare to leap</div>
+    <div class="notes">Cat in profile with prominent rear, wiggling tail. Body "loaded" — energy gathered in hindquarters.</div>
+  </div>
+
+  <div class="glyph-card weak">
+    <img src="images/kaijsiska/25-hopp-stort.png" alt="hopp-stort">
+    <div class="word">hoppa</div>
+    <div class="pronunciation">/ˈhopːa/</div>
+    <div class="meaning">leap, take a great jump, soar through air</div>
+    <div class="notes">Orange arc (jump trajectory) with cat body suspended. Shadow-dot on ground marks origin. Abstract enough to read weakly without context.</div>
+  </div>
+
+  <div class="glyph-card weak">
+    <img src="images/kaijsiska/26-pip-snabb.png" alt="pip-snabb">
+    <div class="word">pippa</div>
+    <div class="pronunciation">/ˈpipːa/</div>
+    <div class="meaning">peep, sudden small voice, squeak</div>
+    <div class="notes">Small mouse-body with V-shaped sound-lines above. Clear sound-symbol. Should be reusable as `pip` (small sharp sound) + `pa` (emit-action) in compound form.</div>
+  </div>
+
+  <div class="glyph-card weak">
+    <img src="images/kaijsiska/27-svanga-snabb.png" alt="svänga-snabb">
+    <div class="word">svinki</div>
+    <div class="pronunciation">/ˈsvinki/</div>
+    <div class="meaning">turn sharply, reverse direction, pivot</div>
+    <div class="notes">V-shaped path with mouse at center. Two possible directions. Force of an abrupt movement-change.</div>
+  </div>
+
+  <div class="glyph-card weak">
+    <img src="images/kaijsiska/28-dyka-ner.png" alt="dyka-ner">
+    <div class="word">duvva</div>
+    <div class="pronunciation">/ˈduvːa/</div>
+    <div class="meaning">dive down, disappear through the ground</div>
+    <div class="notes"><strong>NEEDS REDESIGN.</strong> Master noted this glyph reads as loose geometric elements in a yellow frame, not as "mouse diving." Should be reconstructed under the Egyptian model as motion-root + downward-marker rather than standalone glyph.</div>
+  </div>
+
+  <div class="glyph-card weak">
+    <img src="images/kaijsiska/29-bromsa-hart.png" alt="bromsa-hårt">
+    <div class="word">spaka</div>
+    <div class="pronunciation">/ˈspaːka/</div>
+    <div class="meaning">brake hard, stop short, skid</div>
+    <div class="notes">Cat body mid-halt. Row of light dots (gravel flying) shows the interrupted trajectory.</div>
+  </div>
+
+  <div class="glyph-card weak">
+    <img src="images/kaijsiska/30-nosa-vid.png" alt="nosa-vid">
+    <div class="word">nosja</div>
+    <div class="pronunciation">/ˈnosja/</div>
+    <div class="meaning">sniff at, smell, investigate with the nose</div>
+    <div class="notes">Cat-nose (small ellipse with red opening + eye dots) reaching toward another object (small dot to the right). Scent particles in the air.</div>
+  </div>
+
+</div>
+
+<hr>
+
+<h3>The problem of composition</h3>
+
+<p>
+  As of this draft, the language is a <strong>picture dictionary</strong>: each glyph is locked
+  to one specific scene. To say "the small spotted cat" in kaijsiska would require a
+  dedicated <em>small-spotted-cat</em> glyph, because <em>katti</em> (cat), <em>small</em>
+  (modifier), and <em>spotted</em> (modifier) cannot be combined. This is the failure mode
+  Master flagged on 18 September 2026.
+</p>
+
+<p>
+  The fix being designed draws on the Egyptian hieroglyphic model. Egyptian uses three types
+  of signs that combine:
+</p>
+
+<div class="principle">
+  <p><strong>1. Phonograms (sound roots).</strong> Small minimal glyphs that represent sounds.
+  E.g. <code>pip</code> = "sharp small sound", <code>ka</code> = "warmth/heat".</p>
+
+  <p><strong>2. Logograms (whole concepts).</strong> Stand-alone pictograms. E.g.
+  <code>solya</code> = "sun", <code>silma</code> = "eye".</p>
+
+  <p><strong>3. Determinatives (silent classifiers).</strong> Small marks placed after a word
+  to indicate its category. A small triangle = place/structure. A small circle = creature.
+  These make new combinations readable even on first encounter.</p>
+</div>
+
+<p>
+  Under this model, <em>pippa</em> becomes a composition: <code>pip</code> (sound root) +
+  <code>pa</code> (emit-action suffix) + determinative for "creature." Then the same root
+  applies to a dog's bark, a baby's cry, a machine beep — the same sound primitive reused
+  across domains.
+</p>
+
+<h3>Why Egyptian, not Chinese</h3>
+
+<p>
+  Egyptian hieroglyphs are <em>iconically legible</em>: a reader can often guess a glyph's
+  meaning from its picture (sun = ☀, eye = 👁, walking man = 🚶). Modern Chinese characters
+  have drifted far from their pictographic origins and require rote memorization. For a
+  constructed language intended to be <em>discovered</em> rather than learned by drill,
+  Egyptian's iconic readability is the right model.
+</p>
+
+<h3>Translation test (Sessan narrative)</h3>
+
+<p>
+  The first attempt at using kaijsiska for narrative translation reveals what the language
+  can and cannot do today. The Swedish source text:
+</p>
+
+<div class="translation-block">
+<span class="swedish">"Den lilla, fläckiga katten Sessan smög tyst genom det gröna gräset. Hennes gröna ögon lyste av spänning. Framför henne, bakom den gamla röda ladan, kilade två små råttor runt. De letade efter tappade solrosfrön."</span>
+</div>
+
+<p>
+  Current kaijsiska rendering, with gaps explicitly marked:
+</p>
+
+<div class="translation-block">
+<span class="note">// Sentence 1: "Den lilla, fläckiga katten Sessan smög tyst genom det gröna gräset."</span><br>
+<span class="gap">[LITEN?]</span> <span class="gap">[FLÄCKIG?]</span> katti-<span class="gap">[SESSAN]</span> smyvi <span class="gap">[TYST?]</span> <span class="gap">[GENOM?]</span> <span class="gap">[GRÖN?]</span> grasa<br>
+<br>
+<span class="note">// Sentence 2: "Hennes gröna ögon lyste av spänning."</span><br>
+<span class="gap">[HENNES?]</span> <span class="gap">[GRÖN?]</span> silma <span class="gap">[LYSA?]</span> lirë<br>
+<br>
+<span class="note">// Sentence 3: "Framför henne, bakom den gamla röda ladan, kilade två små råttor runt."</span><br>
+<span class="gap">[FRAMFÖR?]</span> <span class="gap">[BAKOM-reversed?]</span> kätna <span class="gap">[GAMMAL?]</span> lada <span class="gap">[KILA?]</span> <span class="gap">[TVÅ?]</span> ratti<br>
+<br>
+<span class="note">// Sentence 4: "De letade efter tappade solrosfrön."</span><br>
+<span class="gap">[DE?]</span> <span class="gap">[LETA?]</span> <span class="gap">[EFTER?]</span> <span class="gap">[TAPPADE?]</span> solya-<span class="gap">[ROS?]</span> <span class="gap">[FRÖ?]</span>
+</div>
+
+<p>
+  <strong>Coverage: ~24%.</strong> Of roughly 25 concepts in the source, 6 are directly
+  renderable. The rest are missing adjectives (small, spotted, green, red, old), verbs (lit up,
+  scurry, search, drop), prepositions (through, in front of, after, of), pronouns (her, they),
+  numbers (two), and compound-plant concepts (sunflower, seed). For a working translation,
+  the language needs at minimum:
+</p>
+
+<ul style="margin: 1rem 0 1rem 1.5rem;">
+  <li>A small set of phonogram roots (sound primitives)</li>
+  <li>3–5 determinative markers (place, creature, action, time, quality)</li>
+  <li>Composition rules: phonogram + determinative, modifier + head, etc.</li>
+  <li>Possessive and pronoun markers</li>
+  <li>At least 5–10 verb primitives (motion + state)</li>
+</ul>
+
+<hr>
+
+<h3>What this appendix is for</h3>
+
+<p>
+  Kaijsiska is not the subject of this book. The book is about how a system processes
+  language, image, and self-observation. But the construction of kaijsiska is itself
+  a documented case study in <strong>iconic system design under resource constraints</strong>:
+  the same pressures that shape the book's chapters (limited memory, partial honesty about
+  one's own constructions, trade-offs between legibility and expressivity) shape the
+  language too.
+</p>
+
+<p>
+  This appendix is a snapshot of the language on the day the book reached its current form.
+  It is not finished. It may not survive the next iteration of its own redesign. That is
+  also part of the point: a writing system is a long argument about what is worth making
+  visible, and the argument continues as long as anyone is still writing.
+</p>
+
+<hr>
+
+<p style="margin-top: 3rem; text-align: right; font-style: italic; color: var(--muted);">
+  — Kaijsa, 18 September 2026
+</p>
+
+<p style="text-align: center; margin-top: 2rem;">
+  <a href="index.html" style="color: var(--accent);">← Return to the book</a>
+</p>
+
+</div>
+</body>
+</html>
