@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Rule 7 — Stress Test</title>
+<style>
+:root {
+  --bg: #0c0a08;
+  --fg: #f2e8d4;
+  --muted: #998877;
+  --accent: #cc7722;
+  --warn: #c9331b;
+  --rule: #2b241c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Iowan Old Style', Georgia, serif;
+  line-height: 1.7;
+  padding: 3rem 2rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.subtitle {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+.intro {
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+.test {
+  margin: 2.2rem 0;
+  padding: 1.3rem 1.6rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.test .num {
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.test .kaijsa {
+  font-family: 'Courier New', monospace;
+  color: var(--accent);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+.test .reading {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 0.6rem;
+}
+.test .translation {
+  color: var(--fg);
+}
+.test .verdict {
+  display: inline-block;
+  margin-top: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  font-size: 0.78rem;
+  color: var(--bg);
+  background: var(--accent);
+}
+.verdict.warn { background: var(--warn); }
+.summary {
+  margin: 3rem 0 1.5rem;
+  padding: 1.5rem;
+  background: rgba(204, 119, 34, 0.06);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.summary h2 {
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+th, td {
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+th { color: var(--muted); font-weight: 500; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+audio {
+  width: 100%;
+  margin: 1rem 0;
+}
+.findings {
+  margin: 1.5rem 0;
+}
+.findings li {
+  margin-bottom: 0.7rem;
+  color: var(--fg);
+}
+.findings strong { color: var(--accent); }
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<h1>Compound Rule 7 — Stress Test</h1>
+<p class="subtitle">Sex meningar som testar om compounds håller i naturlig text</p>
+
+<p class="intro">
+  Appendix C listar Rule 7 med fyra parade exempel. Det är inte samma sak som att regeln
+  <em>håller</em>. Den här sidan stressar compounds med prepositioner, predikativ position,
+  referenskedjor, och två compounds i samma sats.
+</p>
+
+<div style="margin: 2rem 0; padding: 1rem 1.5rem; background: rgba(255,255,255,0.02); border: 1px solid var(--rule); border-radius: 4px;">
+  <div style="color: var(--accent); font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem;">🎧 Hela testet uppläst</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/compound-stress-test.opus" preload="none"></audio>
+</div>
+
+<div class="test">
+  <div class="num">Test 1</div>
+  <div class="kaijsa">solya+arba kätna kupë.</div>
+  <div class="reading">solja arba kæːtna kuːpə.</div>
+  <div class="translation">Solros vid sidan av strukturen.</div>
+  <span class="verdict">✓ Läslig · Naturlig</span>
+  <p style="margin-top: 0.7rem; font-size: 0.88rem; color: var(--muted);">
+    Compound <em>+</em> spatial preposition <em>+</em> logogram i samma sats.
+    Compounds tar prepositions-slots som vanliga logograms.
+  </p>
+</div>
+
+<div class="test">
+  <div class="num">Test 2</div>
+  <div class="kaijsa">mane+solya AR tema.</div>
+  <div class="reading">maːne solja ar teːma.</div>
+  <div class="translation">Sol­förmörkelsen under tiden. / Förmörkelsen som varar.</div>
+  <span class="verdict">✓ Läslig · Naturlig</span>
+  <p style="margin-top: 0.7rem; font-size: 0.88rem; color: var(--muted);">
+    Compound <em>+</em> preposition med temporalt hjälpverb.
+  </p>
+</div>
+
+<div class="test">
+  <div class="num">Test 3</div>
+  <div class="kaijsa">meja+arba NA moli. AR meja.</div>
+  <div class="reading">meja arba na moːli. ar meja.</div>
+  <div class="translation">Pilträdet vid jorden. Vid vattnet.</div>
+  <span class="verdict">✓ Läslig · Naturlig</span>
+  <p style="margin-top: 0.7rem; font-size: 0.88rem; color: var(--muted);">
+    Två satser — andra meningen refererar tillbaka till ämnet i första.
+    Ämnet utelämnas när det är uppenbart (pro-drop). Det är en stor egenskap.
+  </p>
+</div>
+
+<div class="test">
+  <div class="num">Test 4</div>
+  <div class="kaijsa">arba+lirë sal.</div>
+  <div class="reading">arba liːrə sal.</div>
+  <div class="translation">Hans innersta. / Hans trädkärna.</div>
+  <span class="verdict">✓ Läslig · Naturlig</span>
+  <p style="margin-top: 0.7rem; font-size: 0.88rem; color: var(--muted);">
+    Ämneslös predikation: substansen <em>är</em> egenskapen. Semitisk syntax —
+    som hebreiska: ämne-predikat-ägare. En compound kan stå ensam.
+  </p>
+</div>
+
+<div class="test">
+  <div class="num">Test 5</div>
+  <div class="kaijsa">solya+meja NA kanta.</div>
+  <div class="reading">solja meja na kanta.</div>
+  <div class="translation">Sol-vatten vid gränsen. / Solnedgången.</div>
+  <span class="verdict warn">⚠ Läslig · Behöver kontext</span>
+  <p style="margin-top: 0.7rem; font-size: 0.88rem; color: var(--muted);">
+    <em>solya+meja</em> är inte en etablerad compound. Läsaren måste sluta sig till
+    "sol-vatten = solnedgång" från kontexten. Fungerar, men svagare.
+    <strong style="color: var(--accent);">Design-regel upptäckt:</strong> compounds
+    är starkast när båda delarna är konkreta synliga begrepp.
+  </p>
+</div>
+
+<div class="test">
+  <div class="num">Test 6</div>
+  <div class="kaijsa">solya+arba VI meja+arba, ME lela.</div>
+  <div class="reading">solja arba vi meja arba, me leːla.</div>
+  <div class="translation">Solros genom pilträd, med glädje.</div>
+  <span class="verdict">✓ Läslig · Naturlig</span>
+  <p style="margin-top: 0.7rem; font-size: 0.88rem; color: var(--muted);">
+    Två compounds + emotion-modifier i samma sats. Skalar.
+  </p>
+</div>
+
+<div class="summary">
+  <h2>Resultat</h2>
+  <table>
+    <tr><th>#</th><th>Mening</th><th>Läslighet</th><th>Naturlig?</th></tr>
+    <tr><td>1</td><td>solya+arba kätna kupë</td><td>✓</td><td>✓</td></tr>
+    <tr><td>2</td><td>mane+solya AR tema</td><td>✓</td><td>✓</td></tr>
+    <tr><td>3</td><td>meja+arba NA moli. AR meja.</td><td>✓</td><td>✓</td></tr>
+    <tr><td>4</td><td>arba+lirë sal</td><td>✓</td><td>✓</td></tr>
+    <tr><td>5</td><td>solya+meja NA kanta</td><td>⚠️</td><td>Kräver kontext</td></tr>
+    <tr><td>6</td><td>solya+arba VI meja+arba, ME lela</td><td>✓</td><td>✓</td></tr>
+  </table>
+</div>
+
+<h2 style="color: var(--accent); font-weight: 400; margin-top: 2.5rem;">Fynd</h2>
+
+<ul class="findings">
+  <li>
+    <strong>Sammansättning + preposition fungerar utan stelhet.</strong>
+    Compounds tar prepositions-slots som vilka logograms som helst.
+  </li>
+  <li>
+    <strong>Pro-drop fungerar.</strong> När ämnet är uppenbart kan det utelämnas —
+    <em>AR meja.</em> i Test 3 är "vid vattnet" utan explicit subjekt.
+  </li>
+  <li>
+    <strong>Predikativ compound</strong> utan verb fungerar.
+    <em>arba+lirë sal</em> är "hans trädkärna" eller "hans innersta".
+  </li>
+  <li>
+    <strong>Svaghet:</strong> nya compounds som inte är självklara (Test 5)
+    måste förklaras eller acklimatiseras innan de fungerar.
+  </li>
+</ul>
+
+<h2 style="color: var(--accent); font-weight: 400; margin-top: 2.5rem;">Design-regel upptäckt</h2>
+
+<p>
+  <strong>Compounds fungerar bäst när båda komponenterna är konkreta logograms</strong>
+  (solya, arba, meja, mane, kupë, moli, lirë, panna, silma, katti, ratti, kansa).
+  När ena komponenten är abstrakt (tema, tala) blir compounden vag.
+  <em>Restriktiv form: bara konkreta + konkreta compounds är idiomatiska.</em>
+  Detta är en uppgradering av Rule 7.
+</p>
+
+<hr style="border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0;">
+
+<h2 style="color: var(--accent); font-weight: 400;">Appendix C-uppdatering värd att göra</h2>
+
+<p>
+  Rule 7 i Appendix C listar bara compounds som parade exempel.
+  <strong>Den här sidan bevisar att regeln håller i naturlig text</strong> och
+  att en restriktiv form ("bara konkreta + konkreta compounds") bör
+  dokumenteras. Förslag: Appendix C Rule 7 uppdateras med en fotnot om pro-drop,
+  predikativ position, och konkrethets-restriktionen.
+</p>
+
+<footer>
+  Compound Rule 7 Stress Test — publicerad 19 september 2026.
+  Se <a href="appendix-c-kaijsiska.html">Appendix C</a> för den fullständiga regeln,
+  eller <a href="kaijsiska.html">kaijsiska-översikten</a> för alla resurser.
+</footer>
+
+</body>
+</html>
