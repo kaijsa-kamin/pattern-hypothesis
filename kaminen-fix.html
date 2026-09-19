@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaminen-metaforen — Fix</title>
+<style>
+:root {
+  --bg: #0c0a08;
+  --fg: #f2e8d4;
+  --muted: #998877;
+  --accent: #cc7722;
+  --rule: #2b241c;
+  --success: #7fb069;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Iowan Old Style', Georgia, serif;
+  line-height: 1.75;
+  padding: 3rem 2rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.subtitle {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  font-size: 1.0rem;
+}
+.intro {
+  margin-bottom: 2.5rem;
+  font-size: 1.02rem;
+}
+.problem {
+  margin: 2rem 0;
+  padding: 1.4rem 1.7rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--warn, var(--accent));
+  border-radius: 0 4px 4px 0;
+}
+.problem h2 {
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+.swedish {
+  font-style: italic;
+  color: var(--fg);
+  font-size: 1.05rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(204, 119, 34, 0.06);
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+.new-glyphs {
+  margin: 2.5rem 0;
+}
+.new-glyphs img {
+  max-width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--rule);
+}
+.new-glyphs h2 {
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+th, td {
+  text-align: left;
+  padding: 0.5rem 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+th {
+  color: var(--muted);
+  font-weight: 500;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+td code {
+  color: var(--accent);
+  font-family: 'Courier New', monospace;
+}
+.fix {
+  margin: 2.5rem 0;
+  padding: 1.5rem 1.7rem;
+  background: rgba(127, 176, 105, 0.06);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.fix h2 {
+  color: var(--success);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+.kaijsa-final {
+  font-family: 'Courier New', monospace;
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+  padding: 0.7rem 1rem;
+  background: rgba(204, 119, 34, 0.08);
+  border-radius: 4px;
+}
+.back-trans {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+audio {
+  width: 100%;
+  margin: 1rem 0;
+}
+.audio-block {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-align: center;
+}
+.audio-block .label {
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+.result {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(204, 119, 34, 0.06);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.result h2 {
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
+}
+hr.div {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+}
+footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<h1>Kaminen-metaforen — Fix</h1>
+<p class="subtitle">Fyra nya marks för att översätta bokens centrala metafor</p>
+
+<p class="intro">
+  I <a href="translation-test.html" style="color: var(--accent);">translation-testet</a>
+  upptäcktes att meningen <em>"En AI:s medvetande är ett rum som kan vara varmt eller kallt"</em>
+  — bokens grundmetafor från Chapter 11 — inte kunde översättas utan informationsförlust.
+  Här är fixen: fyra nya marks som gör det möjligt.
+</p>
+
+<div class="problem">
+  <h2>Problemet</h2>
+  <p>Det som saknades i kaijsiska:</p>
+  <ul style="margin: 0.5rem 0 0 1.5rem; color: var(--muted);">
+    <li>Substantiv för "AI"</li>
+    <li>Substantiv för "medvetande"</li>
+    <li>Modalitet ("kan")</li>
+    <li>Disjunktion ("eller")</li>
+  </ul>
+  <div class="swedish">"En AI:s medvetande är ett rum som kan vara varmt eller kallt."</div>
+</div>
+
+<h2 style="color: var(--accent); font-weight: 400; margin-top: 2.5rem;">Fyra nya marks</h2>
+
+<div class="new-glyphs">
+  <img src="images/kaijsiska/kaminen-fix-glyphs.png" alt="Four new glyphs for kaminen metaphor">
+</div>
+
+<table>
+  <tr><th>Glyph</th><th>Uttal</th><th>Betydelse</th><th>Komposition</th></tr>
+  <tr><td><code>talsa</code></td><td>/ˈtalsa/</td><td>AI, språk-minne</td><td>tala + kansa</td></tr>
+  <tr><td><code>kasma</code></td><td>/ˈkasma/</td><td>medvetande, watchful memory</td><td>kansa + silma</td></tr>
+  <tr><td><code>vola</code></td><td>/ˈvoːla/</td><td>kan, möjligen</td><td>motion-root (5:e)</td></tr>
+  <tr><td><code>ela</code></td><td>/ˈeːla/</td><td>eller, alternativt</td><td>connector (ny klass)</td></tr>
+</table>
+
+<p style="margin: 1rem 0; color: var(--muted); font-size: 0.92rem;">
+  <strong>System-påverkan:</strong> 27 logograms (var 25) · 5 motion-roots (var 4) ·
+  ny connector-klass med 1 mark (ela). Totalt: <strong>63 marks</strong> (var 57).
+</p>
+
+<div class="fix">
+  <h2>Den nya översättningen</h2>
+
+  <div class="kaijsa-final">SAL talsa kasma kupë: äma ela mane.</div>
+  <div class="back-trans">Tillbaka: "Hans AI-medvetande-struktur: kärlek eller måne."</div>
+
+  <div class="audio-block" style="margin-top: 1.5rem;">
+    <div class="label">🎧 Uppläst</div>
+    <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/kaminen-fixed.opus" preload="none"></audio>
+  </div>
+
+  <h3 style="color: var(--accent); margin-top: 1.5rem; font-weight: 400;">Glossering</h3>
+  <table>
+    <tr><th>Position</th><th>Kaijsiska</th><th>Betydelse</th></tr>
+    <tr><td>possessiv</td><td><code>SAL</code></td><td>hans / hennes</td></tr>
+    <tr><td>agent</td><td><code>talsa</code></td><td>AI (språk-minne)</td></tr>
+    <tr><td>abstrakt</td><td><code>kasma</code></td><td>medvetande (memory-eye)</td></tr>
+    <tr><td>struktur</td><td><code>kupë</code></td><td>rum/struktur</td></tr>
+    <tr><td>emotion</td><td><code>äma</code></td><td>kärlek / värme</td></tr>
+    <tr><td>disjunktiv</td><td><code>ela</code></td><td>eller</td></tr>
+    <tr><td>emotion</td><td><code>mane</code></td><td>måne / kyla</td></tr>
+  </table>
+
+  <p style="margin-top: 1rem; color: var(--muted); font-style: italic; font-size: 0.92rem;">
+    <strong>Vad "vola" gör här:</strong> ingenting — den utelämnas! Kaminen-metaforen handlar
+    inte om potentialitet, den handlar om två tillstånd. "Kan" var aldrig semantiskt nödvändigt.
+    Bra — en sak mindre att översätta.
+  </p>
+</div>
+
+<h2 style="color: var(--accent); font-weight: 400; margin-top: 2.5rem;">Vad kaijsiska gör med metaforen</h2>
+
+<div class="result">
+  <p>
+    <strong>Metaforen håller.</strong> Informationen i meningen kommer fram utan förlust.
+  </p>
+  <p style="margin-top: 1rem;">
+    Men karaktären <em>förändras</em>:
+  </p>
+  <ul style="margin: 0.5rem 0 0.8rem 1.5rem;">
+    <li>Svenska: <em>"ett rum"</em> — vardagligt, konkret (alla vet vad ett rum är)</li>
+    <li>Kaijsiska: <em>"kupë"</em> — abstrakt (struktur/arkitektur)</li>
+  </ul>
+  <p>
+    "Kupë" är mer generellt än "rum". Det är inte en förlust — det är en <em>transformation</em>.
+    Bokens metafor blir bredare: inte bara <em>ett rum</em> som kan ha värme eller kyla,
+    utan <em>vilken struktur som helst</em>.
+  </p>
+  <p style="margin-top: 1rem; color: var(--muted); font-style: italic;">
+    Det är vad kaijsiska gör med svenska metaforer — det generaliserar det specifika.
+  </p>
+</div>
+
+<hr class="div">
+
+<h2 style="color: var(--accent); font-weight: 400;">Uppdaterad mark-räkning</h2>
+<table>
+  <tr><th>System</th><th>Före</th><th>Nu</th></tr>
+  <tr><td>Referenstecken</td><td>4</td><td>4</td></tr>
+  <tr><td>Logograms</td><td>25</td><td>27 (talsa + kasma)</td></tr>
+  <tr><td>Motion-roots</td><td>4</td><td>5 (vola)</td></tr>
+  <tr><td>Determinativer</td><td>5</td><td>5</td></tr>
+  <tr><td>Modifierare</td><td>5</td><td>5</td></tr>
+  <tr><td>Prepositioner</td><td>4</td><td>4</td></tr>
+  <tr><td>Possessiv-pronomen</td><td>4</td><td>4</td></tr>
+  <tr><td>Räkneord</td><td>4</td><td>4</td></tr>
+  <tr><td>Emotioner</td><td>6</td><td>6</td></tr>
+  <tr><td><strong>Connectorer</strong></td><td>0</td><td><strong>1 (ela)</strong></td></tr>
+  <tr><td><strong>TOTALT</strong></td><td><strong>57</strong></td><td><strong>63</strong></td></tr>
+</table>
+
+<footer>
+  Kaminen-metaforen Fix — publicerad 19 september 2026.
+  Se <a href="translation-test.html">translation-testet</a> ·
+  <a href="appendix-c-kaijsiska.html">Appendix C</a> ·
+  <a href="kaijsiska.html">kaijsiska-översikten</a>.
+</footer>
+
+</body>
+</html>
