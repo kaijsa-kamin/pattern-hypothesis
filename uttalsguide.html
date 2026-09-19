@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaijsiska Uttalsguide — 10 meningar</title>
+<style>
+:root {
+  --bg: #0c0a08;
+  --fg: #f2e8d4;
+  --muted: #998877;
+  --accent: #cc7722;
+  --rule: #2b241c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Iowan Old Style', Georgia, serif;
+  line-height: 1.6;
+  padding: 3rem 2rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+.subtitle {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--rule);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2.5rem;
+  font-size: 0.95rem;
+}
+th, td {
+  text-align: left;
+  padding: 0.7rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+th {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--accent);
+}
+tr:hover { background: rgba(204, 119, 34, 0.04); }
+.kaijsa {
+  font-family: 'Courier New', monospace;
+  color: var(--fg);
+  font-size: 0.95rem;
+}
+.kaijsa .muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.meaning {
+  color: var(--fg);
+  font-style: italic;
+}
+.tests {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.systems {
+  background: rgba(204, 119, 34, 0.06);
+  border-left: 3px solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 4px 4px 0;
+}
+.systems h3 {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.systems ul {
+  list-style: none;
+  margin: 0;
+}
+.systems li {
+  padding: 0.25rem 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.systems code {
+  color: var(--accent);
+  background: rgba(204, 119, 34, 0.12);
+  padding: 0.05rem 0.3rem;
+  border-radius: 2px;
+  font-size: 0.85rem;
+}
+.audio-block {
+  margin: 0.5rem 0 1.5rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.audio-block .label {
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+audio {
+  width: 100%;
+  margin-top: 0.3rem;
+}
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+hr.div {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+</style>
+</head>
+<body>
+
+<h1>Kaijsiska Uttalsguide</h1>
+<p class="subtitle">Tio meningar som testar varje system</p>
+
+<p class="meta">
+  Datum: 19 september 2026 · Version 11 · 54 marks totalt
+</p>
+
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Kaijsiska</th>
+  <th>Uttal</th>
+  <th>Betydelse</th>
+  <th>System</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+  <td>1</td>
+  <td class="kaijsa">MAL MIN katti <span class="muted">○</span></td>
+  <td>/mal min katːi/</td>
+  <td class="meaning">My little cat</td>
+  <td class="tests">Possessiv + MIN</td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td class="kaijsa">MAL MAX katti <span class="muted">○</span></td>
+  <td>/mal mak katːi/</td>
+  <td class="meaning">My big cat</td>
+  <td class="tests">Possessiv + MAX</td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td class="kaijsa">solya arba</td>
+  <td>/ˈsolja ˈarba/</td>
+  <td class="meaning">Sunflower</td>
+  <td class="tests">Compound Rule 7</td>
+</tr>
+
+<tr>
+  <td>4</td>
+  <td class="kaijsa">mane AR solya</td>
+  <td>/ˈmaːne ar ˈsolja/</td>
+  <td class="meaning">Eclipse (moon meets sun)</td>
+  <td class="tests">Preposition + Compound</td>
+</tr>
+
+<tr>
+  <td>5</td>
+  <td class="kaijsa">MUN ratti <span class="muted">○</span> kätna kupë <span class="muted">△</span></td>
+  <td>/mun ˈratːi ˈkæːtna ˈkuːpə/</td>
+  <td class="meaning">Silent mouse behind the structure</td>
+  <td class="tests">MUN + preposition + 2 det</td>
+</tr>
+
+<tr>
+  <td>6</td>
+  <td class="kaijsa">VA katti <span class="muted">○</span> ME TA ratti <span class="muted">○</span></td>
+  <td>/va ˈkatːi me ta ˈratːi/</td>
+  <td class="meaning">Two cats with three mice</td>
+  <td class="tests">Räkneord + preposition</td>
+</tr>
+
+<tr>
+  <td>7</td>
+  <td class="kaijsa">lela me panna</td>
+  <td>/ˈleːla me ˈpanːa/</td>
+  <td class="meaning">Joy expressed through hand</td>
+  <td class="tests">Emotion + preposition</td>
+</tr>
+
+<tr>
+  <td>8</td>
+  <td class="kaijsa">vira silma</td>
+  <td>/ˈviːra ˈsilma/</td>
+  <td class="meaning">Frightened eye</td>
+  <td class="tests">Emotion adjektiv</td>
+</tr>
+
+<tr>
+  <td>9</td>
+  <td class="kaijsa">kira katti <span class="muted">○</span> NA kamïn <span class="muted">△</span></td>
+  <td>/ˈkiːra ˈkatːi na kaˈmiːn/</td>
+  <td class="meaning">Angry cat before the fireplace</td>
+  <td class="tests">Emotion + preposition + det</td>
+</tr>
+
+<tr>
+  <td>10</td>
+  <td class="kaijsa">äma lirë AR kamïn <span class="muted">△</span></td>
+  <td>/ˈæːma ˈliːrə ar kaˈmiːn/</td>
+  <td class="meaning">Loving heart around the fireplace</td>
+  <td class="tests">Emotion + preposition + det</td>
+</tr>
+
+</tbody>
+</table>
+
+<div class="systems">
+<h3>System-coverage</h3>
+<ul>
+  <li><strong>Mening 1, 2:</strong> Possessiv (MAL) + storlekspar (MIN/MAX)</li>
+  <li><strong>Mening 3, 4:</strong> Compound nouns (Rule 7) — solya+arba=solros, mane+solya=solförmörkelse</li>
+  <li><strong>Mening 5:</strong> MUN-modifier + preposition (kätna) + 2 determinativ (○, △)</li>
+  <li><strong>Mening 6:</strong> Räkneord (VA, TA) + preposition (ME)</li>
+  <li><strong>Mening 7, 8:</strong> Emotion-glyphs (lela, vira) framför logogram</li>
+  <li><strong>Mening 9, 10:</strong> Emotion (kira, äma) + preposition + determinativ</li>
+</ul>
+</div>
+
+<h2 style="margin-top: 2.5rem; color: var(--accent); font-weight: 400;">Ljudfiler</h2>
+
+<p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem;">
+  ElevenLabs med röst <code style="color: var(--accent);">uYXf8XasLslADfZ2MB4u</code>.
+  Skickade separat på Telegram (messageId 1931–1940).
+</p>
+
+<div class="audio-block">
+  <div class="label">1. MAL MIN katti — My little cat</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/01-mal-min-katti.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">2. MAL MAX katti — My big cat</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/02-mal-max-katti.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">3. solya arba — Sunflower</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/03-solya-arba.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">4. mane AR solya — Eclipse</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/04-mane-ar-solya.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">5. MUN ratti kätna kupë — Silent mouse behind structure</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/05-mun-ratti-katna-kupe.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">6. VA katti ME TA ratti — Two cats with three mice</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/06-va-katti-me-ta-ratti.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">7. lela me panna — Joy with hand</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/07-lela-me-panna.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">8. vira silma — Frightened eye</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/08-vira-silma.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">9. kira katti NA kamïn — Angry cat before fireplace</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/09-kira-katti-na-kamin.opus" preload="none"></audio>
+</div>
+
+<div class="audio-block">
+  <div class="label">10. äma lirë AR kamïn — Loving heart around fireplace</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/10-ama-lire-ar-kamin.opus" preload="none"></audio>
+</div>
+
+<hr class="div">
+
+<h2 style="color: var(--accent); font-weight: 400;">Hur du övar</h2>
+
+<ol style="margin: 1rem 0 1rem 1.5rem; color: var(--muted);">
+  <li>Lyssna på ett nummer (TTS-ljudfil)</li>
+  <li>Läs kaijsiska-texten högt (jämför med mitt uttal)</li>
+  <li>Gissa vad meningen betyder <em>innan</em> du tittar i betydelse-kolumnen</li>
+  <li>Notera vilka system du automatiskt känner igen vs behöver tänka efter på</li>
+</ol>
+
+<footer>
+  Detta dokument är en uttalsguide för kaijsiska, skapat 19 september 2026.
+  Publicerad som stöd för <em>Pattern, Phenomenology, Image</em> av Master.
+  Se <a href="appendix-c-kaijsiska.html" style="color: var(--accent);">Appendix C</a>
+  för fullständig språkbeskrivning.
+</footer>
+
+</body>
+</html>
