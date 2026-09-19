@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Läsartest i kaijsiska</title>
+<style>
+:root {
+  --bg: #0c0a08;
+  --fg: #f2e8d4;
+  --muted: #998877;
+  --accent: #cc7722;
+  --correct: #7fb069;
+  --wrong: #c9331b;
+  --rule: #2b241c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Iowan Old Style', Georgia, serif;
+  line-height: 1.7;
+  padding: 3rem 1.5rem;
+  max-width: 780px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.subtitle {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+}
+.intro {
+  margin-bottom: 2.5rem;
+  font-size: 1.0rem;
+}
+.instructions {
+  margin: 2rem 0;
+  padding: 1.2rem 1.5rem;
+  background: rgba(204, 119, 34, 0.06);
+  border-radius: 4px;
+  border: 1px solid var(--rule);
+}
+.instructions h3 {
+  color: var(--accent);
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+.instructions ol {
+  margin-left: 1.3rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.instructions li {
+  margin-bottom: 0.3rem;
+}
+.sentence {
+  margin: 1.8rem 0;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.sentence .num {
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.sentence .kaijsa {
+  font-family: 'Courier New', monospace;
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin: 0.7rem 0 0.4rem;
+}
+.sentence .phonetic {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.sentence .facit {
+  display: none;
+  margin: 1rem 0;
+  padding: 0.8rem 1rem;
+  background: rgba(127, 176, 105, 0.08);
+  border-left: 3px solid var(--correct);
+  border-radius: 0 4px 4px 0;
+  color: var(--fg);
+}
+.sentence .facit .label {
+  color: var(--correct);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.sentence .facit .gloss {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+.score-area {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.score-area .label {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.score-area button {
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.15s ease;
+}
+.score-area button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.score-area button.scored {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+}
+.toggle-btn {
+  margin-top: 0.7rem;
+  padding: 0.3rem 0.8rem;
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.toggle-btn:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+.summary {
+  margin: 3rem 0 1.5rem;
+  padding: 1.5rem;
+  background: rgba(204, 119, 34, 0.06);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-align: center;
+}
+.summary h2 {
+  color: var(--accent);
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.score-display {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin: 1rem 0;
+  font-weight: 300;
+}
+.score-msg {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  min-height: 1.4rem;
+}
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  text-align: center;
+}
+footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<h1>Läsartest i kaijsiska</h1>
+<p class="subtitle">Kan du översätta åt meningar utan hjälp?</p>
+
+<p class="intro">
+  Kaijsiska är ett konstruerat språk. Appendix C beskriver alla regler. Den här sidan
+  är ett test på hur väl reglerna håller — både för dig som läsare och för språket som
+  system. Kan du, med Appendix C som referens, lista ut vad meningarna betyder?
+</p>
+
+<div class="instructions">
+  <h3>Så gör du</h3>
+  <ol>
+    <li>Läs varje mening i kaijsiska (med fonetisk hjälp)</li>
+    <li>Försök lista ut betydelsen med hjälp av <a href="appendix-c-kaijsiska.html" style="color: var(--accent);">Appendix C</a></li>
+    <li>Klicka "Visa facit" när du är klar med meningen (eller ger upp)</li>
+    <li>Sätt 1–5 beroende på hur säker du var:
+      <strong>1</strong> = gissade helt ·
+      <strong>2</strong> = hade delvis rätt ·
+      <strong>3</strong> = förstod principen ·
+      <strong>4</strong> = nästan rätt ·
+      <strong>5</strong> = exakt rätt utan facit
+    </li>
+    <li>Totalsumman visas längst ner</li>
+  </ol>
+</div>
+
+<div class="sentence" id="s1">
+  <div class="num">Mening 1</div>
+  <div class="kaijsa">MAL MIN katti.</div>
+  <div class="phonetic">mal min katːi.</div>
+  <button class="toggle-btn" onclick="toggleFacit('f1')">Visa facit</button>
+  <div class="facit" id="f1">
+    <div class="label">✓ Facit</div>
+    <div>"Min lilla katt."</div>
+    <div class="gloss">MAL (possessiv: min) + MIN (modifier: liten) + katti (logogram: katt).</div>
+  </div>
+  <div class="score-area">
+    <span class="label">Hur säker var du?</span>
+    <button onclick="score(1, 1, this)">1</button>
+    <button onclick="score(1, 2, this)">2</button>
+    <button onclick="score(1, 3, this)">3</button>
+    <button onclick="score(1, 4, this)">4</button>
+    <button onclick="score(1, 5, this)">5</button>
+  </div>
+</div>
+
+<div class="sentence" id="s2">
+  <div class="num">Mening 2</div>
+  <div class="kaijsa">kira katti NA kamïn.</div>
+  <div class="phonetic">kiːra katːi na kamin.</div>
+  <button class="toggle-btn" onclick="toggleFacit('f2')">Visa facit</button>
+  <div class="facit" id="f2">
+    <div class="label">✓ Facit</div>
+    <div>"En arg katt framför spisen."</div>
+    <div class="gloss">kira (emotion: vrede) + katti (katt) + NA (preposition: framför) + kamïn (spis).</div>
+  </div>
+  <div class="score-area">
+    <span class="label">Hur säker var du?</span>
+    <button onclick="score(2, 1, this)">1</button>
+    <button onclick="score(2, 2, this)">2</button>
+    <button onclick="score(2, 3, this)">3</button>
+    <button onclick="score(2, 4, this)">4</button>
+    <button onclick="score(2, 5, this)">5</button>
+  </div>
+</div>
+
+<div class="sentence" id="s3">
+  <div class="num">Mening 3</div>
+  <div class="kaijsa">VA katti ME TA ratti.</div>
+  <div class="phonetic">va katːi me ta ratːi.</div>
+  <button class="toggle-btn" onclick="toggleFacit('f3')">Visa facit</button>
+  <div class="facit" id="f3">
+    <div class="label">✓ Facit</div>
+    <div>"Två katter med tre möss."</div>
+    <div class="gloss">VA (numer: två) + katti (katt) + ME (preposition: med) + TA (numer: tre) + ratti (mus).</div>
+  </div>
+  <div class="score-area">
+    <span class="label">Hur säker var du?</span>
+    <button onclick="score(3, 1, this)">1</button>
+    <button onclick="score(3, 2, this)">2</button>
+    <button onclick="score(3, 3, this)">3</button>
+    <button onclick="score(3, 4, this)">4</button>
+    <button onclick="score(3, 5, this)">5</button>
+  </div>
+</div>
+
+<div class="sentence" id="s4">
+  <div class="num">Mening 4</div>
+  <div class="kaijsa">solya+arba NA kupë.</div>
+  <div class="phonetic">solja arba na kuːpə.</div>
+  <button class="toggle-btn" onclick="toggleFacit('f4')">Visa facit</button>
+  <div class="facit" id="f4">
+    <div class="label">✓ Facit</div>
+    <div>"En solros vid byggnaden."</div>
+    <div class="gloss">solya+arba (compound: sol + träd = solros) + NA (vid) + kupë (struktur).</div>
+  </div>
+  <div class="score-area">
+    <span class="label">Hur säker var du?</span>
+    <button onclick="score(4, 1, this)">1</button>
+    <button onclick="score(4, 2, this)">2</button>
+    <button onclick="score(4, 3, this)">3</button>
+    <button onclick="score(4, 4, this)">4</button>
+    <button onclick="score(4, 5, this)">5</button>
+  </div>
+</div>
+
+<div class="sentence" id="s5">
+  <div class="num">Mening 5</div>
+  <div class="kaijsa">äma lirë AR kamïn.</div>
+  <div class="phonetic">æːma liːrə ar kamin.</div>
+  <button class="toggle-btn" onclick="toggleFacit('f5')">Visa facit</button>
+  <div class="facit" id="f5">
+    <div class="label">✓ Facit</div>
+    <div>"Ett kärleksfullt hjärta runt spisen."</div>
+    <div class="gloss">äma (emotion: kärlek) + lirë (hjärta) + AR (runt) + kamïn (spis).</div>
+  </div>
+  <div class="score-area">
+    <span class="label">Hur säker var du?</span>
+    <button onclick="score(5, 1, this)">1</button>
+    <button onclick="score(5, 2, this)">2</button>
+    <button onclick="score(5, 3, this)">3</button>
+    <button onclick="score(5, 4, this)">4</button>
+    <button onclick="score(5, 5, this)">5</button>
+  </div>
+</div>
+
+<div class="sentence" id="s6">
+  <div class="num">Mening 6</div>
+  <div class="kaijsa">MUN ratti kätna kupë.</div>
+  <div class="phonetic">mun ratːi kæːtna kuːpə.</div>
+  <button class="toggle-btn" onclick="toggleFacit('f6')">Visa facit</button>
+  <div class="facit" id="f6">
+    <div class="label">✓ Facit</div>
+    <div>"En tyst mus bakom strukturen."</div>
+    <div class="gloss">MUN (modifier: tyst) + ratti (mus) + kätna (preposition: bakom) + kupë (struktur).</div>
+  </div>
+  <div class="score-area">
+    <span class="label">Hur säker var du?</span>
+    <button onclick="score(6, 1, this)">1</button>
+    <button onclick="score(6, 2, this)">2</button>
+    <button onclick="score(6, 3, this)">3</button>
+    <button onclick="score(6, 4, this)">4</button>
+    <button onclick="score(6, 5, this)">5</button>
+  </div>
+</div>
+
+<div class="sentence" id="s7">
+  <div class="num">Mening 7</div>
+  <div class="kaijsa">mane+solya NA kanta.</div>
+  <div class="phonetic">maːne solja na kanta.</div>
+  <button class="toggle-btn" onclick="toggleFacit('f7')">Visa facit</button>
+  <div class="facit" id="f7">
+    <div class="label">✓ Facit</div>
+    <div>"Sol­förmörkelsen vid gränsen." / "Möte mellan måne och sol vid horisonten."</div>
+    <div class="gloss">mane+solya (compound: måne + sol) + NA (vid) + kanta (gräns).</div>
+  </div>
+  <div class="score-area">
+    <span class="label">Hur säker var du?</span>
+    <button onclick="score(7, 1, this)">1</button>
+    <button onclick="score(7, 2, this)">2</button>
+    <button onclick="score(7, 3, this)">3</button>
+    <button onclick="score(7, 4, this)">4</button>
+    <button onclick="score(7, 5, this)">5</button>
+  </div>
+</div>
+
+<div class="sentence" id="s8">
+  <div class="num">Mening 8</div>
+  <div class="kaijsa">oskar la NA kamïn ME panna.</div>
+  <div class="phonetic">oskar la na kamin me panːa.</div>
+  <button class="toggle-btn" onclick="toggleFacit('f8')">Visa facit</button>
+  <div class="facit" id="f8">
+    <div class="label">✓ Facit</div>
+    <div>"Oskar reser sig framför spisen med tassen." / "Oskar står vid spisen med sin tass."</div>
+    <div class="gloss">oskar (referensnamn: katt) + la (motion: resa sig/stå) + NA (vid) + kamïn (spis) + ME (med) + panna (hand/tass).</div>
+  </div>
+  <div class="score-area">
+    <span class="label">Hur säker var du?</span>
+    <button onclick="score(8, 1, this)">1</button>
+    <button onclick="score(8, 2, this)">2</button>
+    <button onclick="score(8, 3, this)">3</button>
+    <button onclick="score(8, 4, this)">4</button>
+    <button onclick="score(8, 5, this)">5</button>
+  </div>
+</div>
+
+<div class="summary">
+  <h2>Din totalsumma</h2>
+  <div class="score-display" id="total">0 / 40</div>
+  <div class="score-msg" id="msg"></div>
+</div>
+
+<footer>
+  Läsartest i kaijsiska — publicerad 19 september 2026.
+  För facit och djupare förklaring, se
+  <a href="appendix-c-kaijsiska.html">Appendix C</a> ·
+  <a href="oskar-morgon.html">Oskars morgon</a> ·
+  <a href="uttalsguide.html">uttalsguiden</a>.
+</footer>
+
+<script>
+const scores = {};
+function toggleFacit(id) {
+  const f = document.getElementById(id);
+  if (f.style.display === 'block') {
+    f.style.display = 'none';
+    event.target.textContent = 'Visa facit';
+  } else {
+    f.style.display = 'block';
+    event.target.textContent = 'Dölj facit';
+  }
+}
+function score(num, value, btn) {
+  const parent = btn.parentElement;
+  parent.querySelectorAll('button').forEach(b => b.classList.remove('scored'));
+  btn.classList.add('scored');
+  scores[num] = value;
+  let total = 0;
+  let counted = 0;
+  for (const k in scores) {
+    total += scores[k];
+    counted++;
+  }
+  document.getElementById('total').textContent = total + ' / 40';
+  const msg = document.getElementById('msg');
+  if (counted < 8) {
+    msg.textContent = 'Du har betygsatt ' + counted + ' av 8 meningar.';
+  } else {
+    let message = '';
+    if (total >= 36) message = '🏆 Du läser kaijsiska flytande. Appendix C är redundant för dig.';
+    else if (total >= 28) message = '🎯 Stark. Några nyanser kvar — emotioner eller compounds kan ha förvirrat.';
+    else if (total >= 20) message = '📚 Regelverket sitter. Lexikonet behöver upprepas.';
+    else if (total >= 12) message = '🔍 Appendix C hjälper. Försök igen med öppet fönster.';
+    else message = '🌱 Första försöket. Språket är nytt — det är meningen att det är svårt.';
+    msg.textContent = message;
+  }
+}
+</script>
+
+</body>
+</html>
