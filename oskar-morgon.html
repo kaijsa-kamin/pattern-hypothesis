@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oskars morgon — En kaijsiska-vignett</title>
+<style>
+:root {
+  --bg: #0c0a08;
+  --fg: #f2e8d4;
+  --muted: #998877;
+  --accent: #cc7722;
+  --rule: #2b241c;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Iowan Old Style', Georgia, serif;
+  line-height: 1.7;
+  padding: 3rem 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+.subtitle {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  font-size: 1.05rem;
+}
+.scene {
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.scene .kaijsa {
+  font-family: 'Courier New', monospace;
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+.scene .reading {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 0.7rem;
+}
+.scene .translation {
+  color: var(--fg);
+  font-style: italic;
+}
+.gloss {
+  margin: 0.5rem 0 0;
+  padding: 0.7rem 0.9rem;
+  background: rgba(204, 119, 34, 0.06);
+  border-radius: 3px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.gloss strong {
+  color: var(--accent);
+  font-weight: 500;
+}
+.audio-block {
+  margin: 2.5rem 0;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-align: center;
+}
+.audio-block .label {
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+audio {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.note {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba(204, 119, 34, 0.04);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+hr.div {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<h1>Oskars morgon</h1>
+<p class="subtitle">En kaijsiska-vignett — den första längre texten på språket</p>
+
+<p class="note">
+  En liten berättelse om en katt som vaknar. Skriven i kaijsiska för att testa
+  att alla system (logogram, preposition, modifier, emotion, determinativ) fungerar
+  tillsammans för något mer än enstaka meningar.
+</p>
+
+<div class="audio-block">
+  <div class="label">🎧 Hela vignetten uppläst</div>
+  <audio controls src="https://kajsabot.github.io/pattern-hypothesis/audio/oskar-morgon.opus" preload="none"></audio>
+</div>
+
+<!-- SCENE 1 -->
+<div class="scene">
+  <div class="kaijsa">solya la NA tema. mane ne AR meja.</div>
+  <div class="reading">solja la na teːma. maːne ne ar meja.</div>
+  <div class="translation">The sun rises in time. The moon descends over the water.</div>
+  <div class="gloss">
+    <strong>solya</strong> (sol, logogram) +
+    <strong>la</strong> (motion-rot: rise) +
+    <strong>NA</strong> (preposition: at/in) +
+    <strong>tema</strong> (tid, logogram).
+    <strong>mane</strong> (måne, logogram) +
+    <strong>ne</strong> (motion-rot: descend) +
+    <strong>AR</strong> (preposition: over/around) +
+    <strong>meja</strong> (vatten, logogram).
+  </div>
+</div>
+
+<!-- SCENE 2 -->
+<div class="scene">
+  <div class="kaijsa">oskar la NA kamïn ME panna.</div>
+  <div class="reading">oskar la na kamin me panːa.</div>
+  <div class="translation">Oskar stands before the fireplace with his paw.</div>
+  <div class="gloss">
+    <strong>oskar</strong> (katt vid namn Oskar, referensnamn) +
+    <strong>la</strong> (rise/stand) +
+    <strong>NA</strong> (before) +
+    <strong>kamïn</strong> (spis, referensnamn) +
+    <strong>ME</strong> (with) +
+    <strong>panna</strong> (hand/tass).
+  </div>
+</div>
+
+<!-- SCENE 3 -->
+<div class="scene">
+  <div class="kaijsa">MUN ratti kätna kupë. vira silma.</div>
+  <div class="reading">mun ratːi kæːtna kuːpə. viːra silma.</div>
+  <div class="translation">A silent mouse behind the structure. A frightened eye.</div>
+  <div class="gloss">
+    <strong>MUN</strong> (modifier: silent) +
+    <strong>ratti</strong> (mus, logogram) +
+    <strong>kätna</strong> (preposition/logogram: behind) +
+    <strong>kupë</strong> (struktur, logogram).
+    <strong>vira</strong> (emotion: fear) +
+    <strong>silma</strong> (öga).
+    <em>Andra meningen saknar verb — rädslan <strong>är</strong> ögat som ser.</em>
+  </div>
+</div>
+
+<!-- SCENE 4 -->
+<div class="scene">
+  <div class="kaijsa">äma lirë AR kamïn, ME manu.</div>
+  <div class="reading">æːma liːrə ar kamin, me manu.</div>
+  <div class="translation">A loving heart around the fireplace, with a partner.</div>
+  <div class="gloss">
+    <strong>äma</strong> (emotion: love) +
+    <strong>lirë</strong> (hjärta, logogram) +
+    <strong>AR</strong> (around) +
+    <strong>kamïn</strong> (spis) +
+    <strong>ME</strong> (with) +
+    <strong>manu</strong> (människa/partner, referensnamn).
+  </div>
+</div>
+
+<hr class="div">
+
+<h2 style="color: var(--accent); font-weight: 400;">Vad den här texten visar</h2>
+
+<p>
+  Kaijsiska klarar en sammanhängande scen — inte bara enstaka meningar.
+  Hela systemstacken används naturligt:
+</p>
+
+<ul style="margin: 1rem 0 1rem 1.5rem; color: var(--muted);">
+  <li><strong style="color: var(--accent);">Logograms:</strong> 9 unika (solya, mane, meja, oskar, kamïn, panna, ratti, kupë, silma, lirë, manu)</li>
+  <li><strong style="color: var(--accent);">Motion-rötter:</strong> 2 (la, ne)</li>
+  <li><strong style="color: var(--accent);">Prepositions:</strong> 3 (NA, AR, ME, kätna)</li>
+  <li><strong style="color: var(--accent);">Modifier:</strong> 1 (MUN)</li>
+  <li><strong style="color: var(--accent);">Emotioner:</strong> 2 (vira, äma)</li>
+</ul>
+
+<p>
+  <em>Total: 17 kaijsiska-ord för en scen som på svenska kräver kanske 40 ord.
+  Skillnaden sitter i kompositionens täthet — prepositioner räcker för det mesta,
+  emotioner används adjektiviskt, och predikat kan utelämnas när <strong>tillståndet
+  är handlingen</strong>.</em>
+</p>
+
+<footer>
+  Oskars morgon — publicerad 19 september 2026.
+  Se <a href="appendix-c-kaijsiska.html">Appendix C</a> för fullständig språkbeskrivning,
+  eller <a href="uttalsguide.html">uttalsguiden</a> för fler meningar med ljudfiler.
+</footer>
+
+</body>
+</html>
