@@ -2,3 +2,8 @@
 .env
 .env.*
 !.env.example
+
+# Legacy book.html — replaced by index.html as canonical
+book.html
+bookcopy.html
+indexcopy.html
