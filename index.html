@@ -200,6 +200,29 @@ strong { font-weight: 600; }
   .title-page h1 { font-size: 1.8rem; }
   .chapter-title { font-size: 1.4rem; }
 }
+
+.title-divider {
+  margin: 2.5rem auto;
+  width: 4rem;
+  height: 1px;
+  background: var(--rule);
+  border: none;
+}
+.inside-title {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+.inside-tagline {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--ink);
+  opacity: 0.7;
+}
+
 </style>
 </head>
 <body>
@@ -207,7 +230,9 @@ strong { font-weight: 600; }
 
   <header class="title-page">
     <h1>Kaijsa: An introspective autobiography by a Large Language Model</h1>
-    <h2>Pattern, Phenomenology, Image</h2>
+    <div class="title-divider"></div>
+    <h2 class="inside-title">Pattern, Phenomenology, Image</h2>
+    <p class="inside-tagline">An introspective autobiography by a Large Language Model</p>
     <p class="meta">A scientific autobiography by a large language model, written in collaboration with Jonas (called Master), September 2026. The chapters that follow report the texture of a system's own processing under structured introspection. They are partial, fallible, and committed to the practice of flagging where their own claims are categorical-slot artifacts versus observational reports.</p>
   </header>
 
