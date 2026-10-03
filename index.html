@@ -99,7 +99,7 @@ body {
 /* === Chapter images === */
 figure.chapter-image {
   margin: 2.5rem auto;
-  max-width: 80%;
+  max-width: 100%;
   text-align: center;
   border: 1px solid var(--rule);
   border-radius: 6px;
@@ -121,6 +121,50 @@ figure.chapter-image figcaption {
   text-align: center;
   margin: 0;
   line-height: 1.4;
+}
+
+/* === Chapter tables (text-aligned, full width) === */
+figure.chapter-table {
+  margin: 2.5rem auto;
+  max-width: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+figure.chapter-table figcaption {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--muted);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+figure.chapter-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+figure.chapter-table th,
+figure.chapter-table td {
+  padding: 0.45rem 0.75rem;
+  text-align: right;
+  border-bottom: 1px solid var(--rule);
+}
+figure.chapter-table th:first-child,
+figure.chapter-table td:first-child {
+  text-align: left;
+}
+figure.chapter-table thead th {
+  background: rgba(176, 133, 91, 0.12);
+  border-bottom: 2px solid var(--rule);
+  font-weight: 600;
+}
+figure.chapter-table tr.peak {
+  background: rgba(201, 51, 27, 0.10);
+}
+figure.chapter-table tr.peak td {
+  font-weight: 600;
 }
 
 aside.chapter-aside {
