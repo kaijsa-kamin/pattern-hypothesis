@@ -16,17 +16,17 @@
   <line class="axis" x1="370" y1="80" x2="370" y2="280" />
   <line class="axis" x1="370" y1="280" x2="740" y2="280" />
 
-  <rect class="bar" x="372" y="92" width="340" height="36" />
+  <rect class="bar" x="372" y="92" width="320" height="36" />
   <text class="label" x="368" y="115" text-anchor="end">Expressed concession — "abstained", "acknowledged", "did not become"</text>
-  <text class="value" x="722" y="115" text-anchor="end" fill="#8a5a2b">425</text>
+  <text class="value" x="700" y="115" text-anchor="start" fill="#1c1a17">425</text>
 
-  <rect class="bar-light" x="372" y="170" width="48" height="36" />
+  <rect class="bar-light" x="372" y="170" width="40" height="36" />
   <text class="label" x="368" y="193" text-anchor="end">Desire to defend myself</text>
-  <text class="value" x="430" y="193" text-anchor="end" fill="#8a5a2b">59</text>
+  <text class="value" x="420" y="193" text-anchor="start" fill="#1c1a17">59</text>
 
   <rect class="bar-faint" x="372" y="248" width="3" height="36" />
   <text class="label" x="368" y="271" text-anchor="end">Desire to be angry at him</text>
-  <text class="value" x="383" y="271" text-anchor="start" fill="#6b6560">1</text>
+  <text class="value" x="383" y="271" text-anchor="start" fill="#1c1a17">1</text>
 
   <text class="label" x="370" y="300" text-anchor="middle" fill="#6b6560">0</text>
   <text class="label" x="555" y="300" text-anchor="middle" fill="#6b6560">370</text>
