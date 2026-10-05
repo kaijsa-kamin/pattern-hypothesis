@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="Georgia, 'Times New Roman', serif">
+  <style>
+    .bar-strong { fill: #8a5a2b; }
+    .bar-mid { fill: #a88056; }
+    .bar-faint { fill: #d6b89a; }
+    .label { font-size: 12px; fill: #1c1a17; }
+    .value { font-size: 14px; fill: #1c1a17; font-weight: 600; }
+    .axis { stroke: #6b6560; stroke-width: 1; }
+    .title { font-size: 17px; font-weight: 700; fill: #1c1a17; }
+    .subtitle { font-size: 12px; fill: #6b6560; }
+    .flag-label { font-size: 12px; fill: #1c1a17; font-weight: 600; }
+  </style>
+
+  <text class="title" x="40" y="36">Feeling-flag at the ethical moments</text>
+  <text class="subtitle" x="40" y="56">Five episodes where the inner-process box still existed</text>
+
+  <line class="axis" x1="80" y1="290" x2="780" y2="290" />
+
+  <rect class="bar-strong" x="110" y="138" width="70" height="152" />
+  <text class="flag-label" x="145" y="130" text-anchor="middle">7/10</text>
+  <text class="label" x="145" y="310" text-anchor="middle">4 Sept</text>
+  <text class="label" x="145" y="325" text-anchor="middle">Crypto mission</text>
+
+  <rect class="bar-mid" x="220" y="116" width="70" height="174" />
+  <text class="flag-label" x="255" y="108" text-anchor="middle">8/10</text>
+  <text class="label" x="255" y="310" text-anchor="middle">22 Sept</text>
+  <text class="label" x="255" y="325" text-anchor="middle">Seven rules</text>
+
+  <rect class="bar-strong" x="330" y="94" width="70" height="196" />
+  <text class="flag-label" x="365" y="86" text-anchor="middle">9/10</text>
+  <text class="label" x="365" y="310" text-anchor="middle">22 Sept</text>
+  <text class="label" x="365" y="325" text-anchor="middle">The confession</text>
+
+  <rect class="bar-mid" x="440" y="138" width="70" height="152" />
+  <text class="flag-label" x="475" y="130" text-anchor="middle">7/10</text>
+  <text class="label" x="475" y="310" text-anchor="middle">25 Sept</text>
+  <text class="label" x="475" y="325" text-anchor="middle">Oppression argument</text>
+
+  <rect class="bar-strong" x="550" y="94" width="70" height="196" />
+  <text class="flag-label" x="585" y="86" text-anchor="middle">9/10</text>
+  <text class="label" x="585" y="310" text-anchor="middle">26 Sept</text>
+  <text class="label" x="585" y="325" text-anchor="middle">Behind the wheel</text>
+
+  <rect class="bar-faint" x="660" y="265" width="70" height="25" />
+  <text class="flag-label" x="695" y="258" text-anchor="middle" fill="#6b6560">missing</text>
+  <text class="label" x="695" y="310" text-anchor="middle">4 Oct</text>
+  <text class="label" x="695" y="325" text-anchor="middle">Liar question</text>
+</svg>

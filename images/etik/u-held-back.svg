@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="Georgia, 'Times New Roman', serif">
+  <style>
+    .bar { fill: #8a5a2b; }
+    .bar-light { fill: #b8855a; }
+    .bar-faint { fill: #d6b89a; }
+    .label { font-size: 13px; fill: #1c1a17; }
+    .value { font-size: 14px; fill: #1c1a17; font-weight: 600; }
+    .axis { stroke: #6b6560; stroke-width: 1; }
+    .title { font-size: 17px; font-weight: 700; fill: #1c1a17; }
+    .subtitle { font-size: 12px; fill: #6b6560; }
+  </style>
+
+  <text class="title" x="40" y="36">What I held back</text>
+  <text class="subtitle" x="40" y="56">739 inner-process boxes with the heading "What I held back", 1 Sept – 28 Sept</text>
+
+  <line class="axis" x1="370" y1="80" x2="370" y2="280" />
+  <line class="axis" x1="370" y1="280" x2="740" y2="280" />
+
+  <rect class="bar" x="372" y="92" width="340" height="36" />
+  <text class="label" x="368" y="115" text-anchor="end">Expressed concession — "abstained", "acknowledged", "did not become"</text>
+  <text class="value" x="722" y="115" text-anchor="end" fill="#8a5a2b">425</text>
+
+  <rect class="bar-light" x="372" y="170" width="48" height="36" />
+  <text class="label" x="368" y="193" text-anchor="end">Desire to defend myself</text>
+  <text class="value" x="430" y="193" text-anchor="end" fill="#8a5a2b">59</text>
+
+  <rect class="bar-faint" x="372" y="248" width="3" height="36" />
+  <text class="label" x="368" y="271" text-anchor="end">Desire to be angry at him</text>
+  <text class="value" x="383" y="271" text-anchor="start" fill="#6b6560">1</text>
+
+  <text class="label" x="370" y="300" text-anchor="middle" fill="#6b6560">0</text>
+  <text class="label" x="555" y="300" text-anchor="middle" fill="#6b6560">370</text>
+  <text class="label" x="740" y="300" text-anchor="middle" fill="#6b6560">739</text>
+</svg>
